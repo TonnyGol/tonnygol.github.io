@@ -1,4 +1,5 @@
 import styles from './About.module.css';
+import { personalInfo } from '../../data/projects';
 
 const About = () => {
     const highlights = [
@@ -20,17 +21,12 @@ const About = () => {
 
                 <div className={styles.content}>
                     <p className={styles.text}>
-                        Hey! I'm Tonny, a Computer Science student with a passion for building things that work.
-                        Whether it's a backend booking system with Spring Boot, a Telegram bot for automation,
-                        or a machine learning project for license plate recognition — I love the entire process of
-                        taking an idea from concept to deployment.
+                        Hey! I'm {personalInfo.name.split(' ')[0]}, a {personalInfo.title} and {personalInfo.summary.charAt(0).toLowerCase() + personalInfo.summary.slice(1)}
                     </p>
                     <p className={styles.text}>
-                        My journey in tech started with the "Magshimim" cyber program and has evolved through
-                        military service and academic studies into hands-on experience with real systems.
+                        My journey in tech started with the "{personalInfo.education[1].program}" and has evolved through
+                        my time as a {personalInfo.military[0].role} in the {personalInfo.military[0].unit} and my {personalInfo.education[0].degree.toLowerCase()} studies.
                         I've built booking platforms, bots, desktop games, and explored machine learning.
-                        I'm most comfortable with Java, Python, and JavaScript on the backend,
-                        and React for frontend work.
                     </p>
 
                     <div className={styles.highlights}>

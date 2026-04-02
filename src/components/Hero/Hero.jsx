@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import styles from './Hero.module.css';
 import HeroLaptop from './HeroLaptop';
+import { personalInfo } from '../../data/projects';
 
 const Hero = () => {
     const [displayText, setDisplayText] = useState('');
     const [isTyping, setIsTyping] = useState(true);
 
-    const roles = ['Software Developer', 'Backend Engineer', 'CS Student', 'Problem Solver'];
+    const roles = [personalInfo.title, 'Backend Engineer', 'CS Student', 'Problem Solver'];
     const [roleIndex, setRoleIndex] = useState(0);
     const [charIndex, setCharIndex] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
@@ -46,7 +47,7 @@ const Hero = () => {
                     </div>
 
                     <h1 className={styles.title}>
-                        <span className={styles.name}>Tonny Golubitsky</span>
+                        <span className={styles.name}>{personalInfo.name}</span>
                     </h1>
 
                     <div className={styles.roleWrapper}>
@@ -58,9 +59,7 @@ const Hero = () => {
                     </div>
 
                     <p className={styles.description}>
-                        Third-year Computer Science student passionate about building robust systems and clean code.
-                        I love working with Java, Python, and JavaScript to create efficient backend solutions
-                        and bringing ideas to life with React on the frontend.
+                        {personalInfo.summary}
                     </p>
 
                     <div className={styles.buttons}>

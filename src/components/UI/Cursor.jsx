@@ -37,9 +37,9 @@ const Cursor = () => {
             y: mousePosition.y - 16,
             transition: {
                 type: "spring",
-                damping: 20,
-                stiffness: 300,
-                mass: 0.5
+                damping: 25,
+                stiffness: 800,
+                mass: 0.1
             }
         },
         hover: {
@@ -50,9 +50,9 @@ const Cursor = () => {
             border: "1px solid rgba(0, 212, 255, 0.8)",
             transition: {
                 type: "spring",
-                damping: 20,
-                stiffness: 300,
-                mass: 0.5
+                damping: 25,
+                stiffness: 800,
+                mass: 0.1
             }
         }
     };

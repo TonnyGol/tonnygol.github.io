@@ -1,0 +1,58 @@
+Tonny Golubitsky
++972-527808321 • tonnygol101@gmail.com• linkedin.com/in/Tonny-Golubitsky • https://github.com/TonnyGol
+Third-year Computer Science student with strong programming skills and a solid
+foundation in software engineering principles. Proﬁcient in Java, Python, with
+practical experience in object-oriented design, data structures, and database
+systems. Skilled in working with Git, MySQL, REST APIs. Eager to contribute to
+development teams and grow in areas such as backend engineering, system
+design, and scalable application development.
+PROJECTS
+Escape Room Booking and Management System
+• Built a backend server for room booking system and a JavaFX admin desktop
+app, Spring Boot backend, and MySQL database. Developed a React + Vite
+client to display and interact with the booking calendar in real time via
+RESTful integration.
+• Skills: Java, Spring Boot, JavaFX, React, Vite, JavaScript, MySQL, REST APIs
+License Plate Scanner – Automatic Number Plate Recognition
+• Developed with TensorFlow and OpenCV to recognize Israeli license plates
+from video, converting them to strings. Implemented a client-server
+architecture using sockets (UDP), with a web-based client and SQL database
+on the server. Communication occurred via JSON, with a Flask-based
+interface.
+• Skills: Machine Learning (TensorFlow), Computer Vision (OpenCV), Client-
+Server Architecture, SQL Database Management
+Battleship Hybrid Interactive Game
+• Developed a physical-to-digital Battleship experience bridging a sensor-
+equipped board with a C#/WPF digital engine via MQTT real-time
+communication. Implemented complex state-machine logic for ship
+placement validation, cross-team multiplayer architecture, and custom sprite
+animation caching to deliver a seamless user experience.
+• Skills: C#, .NET, WPF, MQTT, Hardware-Software Integration, State-Machine
+Logic, UI Development
+VOLUNTEERING & LEADERSHIP
+"Youth for an Equal Society" organization• 2017 - 2020
+• Strategic Leadership: Managed the human resources team and oversaw the
+planning and execution of various organizational ventures.
+• Volunteer Development: Led recruitment and marketing initiatives while
+designing strategic growth and expansion plans for volunteer roles.
+Military Service• 2020 - 2023
+Field Intelligence Corps, IDF
+• Squad Commander – released as staff sergeant.
+SKILLS
+Languages: Java, Python,
+C# , JavaScript, SQL
+Technologies: Git  ( GitHub) ,
+VScode, intellij, Vite, MySQL,
+REST  APIs, Postman,
+Dockers, AntiGravity, Cursor,
+Claude
+EDUCATION
+bachelor’s degree in
+computer science
+Ashkelon Academic
+Collage
+2023 - Present
+“Magshimim”
+Program
+Cyber Education Center
+2017 - 2020
