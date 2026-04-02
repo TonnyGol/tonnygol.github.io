@@ -10,6 +10,16 @@ const Projects = () => {
 
     const activeProject = activeProjectId ? projects.find(p => p.id === activeProjectId) : null;
 
+    const isDriveLink = (url) => url && url.includes('drive.google.com');
+
+    // Convert Drive uc or standard links to preview links
+    const getDrivePreviewLink = (url) => {
+        if (!url) return '';
+        const idMatch = url.match(/id=([^&]+)/) || url.match(/\/d\/([^\/]+)/);
+        const videoId = idMatch ? idMatch[1] : null;
+        return videoId ? `https://drive.google.com/file/d/${videoId}/preview` : url;
+    };
+
     return (
         <section className={styles.projects} id="projects">
             <div className={styles.container}>
@@ -98,27 +108,51 @@ const Projects = () => {
                             
                             <div className={styles.projectVisual}>
                                 {activeProject.video ? (
-                                    <>
-                                        <video 
-                                            src={activeProject.video} 
-                                            className={styles.projectVideo} 
-                                            autoPlay 
-                                            loop 
-                                            muted 
-                                            playsInline 
-                                            onClick={() => setFullScreenVideo(true)}
-                                            style={{ cursor: 'pointer' }}
-                                            onError={(e) => {
-                                                e.target.style.display = 'none'; 
-                                                e.target.parentElement.innerHTML += `<div class="${styles.imagePlaceholder}"><span>Video goes here.<br/>Upload to: <b>public${activeProject.video}</b></span></div>`;
-                                            }}
-                                        />
-                                        <button className={styles.expandBtn} onClick={() => setFullScreenVideo(true)} aria-label="Expand video">
-                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-                                            </svg>
-                                        </button>
-                                    </>
+                                    isDriveLink(activeProject.video) ? (
+                                        <>
+                                            <div className={styles.iframeContainer} style={{ width: '100%', height: '100%', position: 'relative', borderRadius: '12px', overflow: 'hidden' }}>
+                                                <iframe 
+                                                    src={getDrivePreviewLink(activeProject.video)} 
+                                                    title={`${activeProject.title} Demo`}
+                                                    style={{ width: '100%', height: '100%', border: 'none' }}
+                                                    allow="autoplay; fullscreen"
+                                                    allowFullScreen
+                                                />
+                                            </div>
+                                            <button 
+                                                className={styles.expandBtn} 
+                                                style={{ zIndex: 10 }}
+                                                onClick={() => setFullScreenVideo(true)} 
+                                                aria-label="Expand video"
+                                            >
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                                                </svg>
+                                            </button>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <video 
+                                                src={activeProject.video} 
+                                                className={styles.projectVideo} 
+                                                autoPlay 
+                                                loop 
+                                                muted 
+                                                playsInline 
+                                                onClick={() => setFullScreenVideo(true)}
+                                                style={{ cursor: 'pointer' }}
+                                                onError={(e) => {
+                                                    e.target.style.display = 'none'; 
+                                                    e.target.parentElement.innerHTML += `<div class="${styles.imagePlaceholder}"><span>Video goes here.<br/>Upload to: <b>public${activeProject.video}</b></span></div>`;
+                                                }}
+                                            />
+                                            <button className={styles.expandBtn} onClick={() => setFullScreenVideo(true)} aria-label="Expand video">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                                                </svg>
+                                            </button>
+                                        </>
+                                    )
                                 ) : (
                                     <div className={styles.imagePlaceholder}>
                                         <span>Video goes here. Please upload a video (.mp4).</span>
@@ -140,14 +174,25 @@ const Projects = () => {
                         </svg>
                     </button>
                     <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
-                        <video 
-                            src={activeProject.video} 
-                            className={styles.fullScreenVideo} 
-                            autoPlay 
-                            loop 
-                            controls
-                            playsInline 
-                        />
+                        {isDriveLink(activeProject.video) ? (
+                            <iframe 
+                                src={getDrivePreviewLink(activeProject.video)} 
+                                title={`${activeProject.title} Demo Fullscreen`}
+                                className={styles.fullScreenVideo}
+                                style={{ width: '100%', height: '100%', border: 'none' }}
+                                allow="autoplay; fullscreen"
+                                allowFullScreen
+                            />
+                        ) : (
+                            <video 
+                                src={activeProject.video} 
+                                className={styles.fullScreenVideo} 
+                                autoPlay 
+                                loop 
+                                controls
+                                playsInline 
+                            />
+                        )}
                     </div>
                 </div>
             )}
