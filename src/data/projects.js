@@ -17,7 +17,7 @@ export const projects = [
     title: "License Plate Scanner – Automatic Number Plate Recognition",
     emoji: "🚗",
     description: "Developed with TensorFlow and OpenCV to recognize Israeli license plates from video, converting them to strings. Implemented a client-server architecture using sockets (UDP), with a web-based client and SQL database on the server. Communication occurred via JSON, with a Flask-based interface.",
-    video: "https://drive.google.com/uc?export=download&id=1qYdYrnJ8SYl3wPwLS_DGI82wbnnDfII5",
+    video: "https://drive.google.com/uc?export=download&id=1Rxzo_1Nu6jVgPf_22jn_exM8oyEE_ZcB",
     technologies: ["Python", "TensorFlow", "OpenCV", "Flask", "SQL", "Client-Server Architecture"],
     category: "Machine Learning",
     githubUrl: "https://github.com/TonnyGol/LicensePlate-Scanner",
