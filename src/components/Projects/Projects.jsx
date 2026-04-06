@@ -29,7 +29,7 @@ const Projects = () => {
                         Featured <span className={styles.highlight}>Projects</span>
                     </h2>
                     <p className={styles.subtitle}>
-                        {activeProject 
+                        {activeProject
                             ? "Detailed interactive walkthrough of the project."
                             : "Click on a project to view its details and visual walkthroughs."}
                     </p>
@@ -45,6 +45,28 @@ const Projects = () => {
                                     style={{ animationDelay: `${index * 0.1}s` }}
                                     onClick={() => setActiveProjectId(project.id)}
                                 >
+                                    {project.video && (
+                                        <div className={styles.cardVideoPreview}>
+                                            {isDriveLink(project.video) ? (
+                                                <iframe
+                                                    src={getDrivePreviewLink(project.video)}
+                                                    title={`${project.title} Preview`}
+                                                    className={styles.cardPreviewIframe}
+                                                    allow="autoplay"
+                                                    loading="lazy"
+                                                />
+                                            ) : (
+                                                <video
+                                                    src={project.video}
+                                                    className={styles.cardPreviewVideo}
+                                                    autoPlay
+                                                    loop
+                                                    muted
+                                                    playsInline
+                                                />
+                                            )}
+                                        </div>
+                                    )}
                                     <div className={styles.cardContent}>
                                         <span className={styles.category}>{project.category}</span>
                                         <h3 className={styles.gridCardTitle}>
@@ -77,7 +99,7 @@ const Projects = () => {
                                 <span className={styles.activeCategory}>{activeProject.category}</span>
                                 <h3 className={styles.cardTitle}>{activeProject.title}</h3>
                                 <p className={styles.cardDesc}>{activeProject.description}</p>
-                                
+
                                 <div className={styles.techStack} style={{ marginTop: '24px', marginBottom: '32px' }}>
                                     {activeProject.technologies.map((tech) => (
                                         <span key={tech} className={styles.techTag}>{tech}</span>
@@ -105,50 +127,50 @@ const Projects = () => {
                                     )}
                                 </div>
                             </div>
-                            
+
                             <div className={styles.projectVisual}>
                                 {activeProject.video ? (
                                     isDriveLink(activeProject.video) ? (
                                         <>
                                             <div className={styles.iframeContainer} style={{ width: '100%', height: '100%', position: 'relative', borderRadius: '12px', overflow: 'hidden' }}>
-                                                <iframe 
-                                                    src={getDrivePreviewLink(activeProject.video)} 
+                                                <iframe
+                                                    src={getDrivePreviewLink(activeProject.video)}
                                                     title={`${activeProject.title} Demo`}
                                                     style={{ width: '100%', height: '100%', border: 'none' }}
                                                     allow="autoplay; fullscreen"
                                                     allowFullScreen
                                                 />
                                             </div>
-                                            <button 
-                                                className={styles.expandBtn} 
+                                            <button
+                                                className={styles.expandBtn}
                                                 style={{ zIndex: 10 }}
-                                                onClick={() => setFullScreenVideo(true)} 
+                                                onClick={() => setFullScreenVideo(true)}
                                                 aria-label="Expand video"
                                             >
                                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                                                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
                                                 </svg>
                                             </button>
                                         </>
                                     ) : (
                                         <>
-                                            <video 
-                                                src={activeProject.video} 
-                                                className={styles.projectVideo} 
-                                                autoPlay 
-                                                loop 
-                                                muted 
-                                                playsInline 
+                                            <video
+                                                src={activeProject.video}
+                                                className={styles.projectVideo}
+                                                autoPlay
+                                                loop
+                                                muted
+                                                playsInline
                                                 onClick={() => setFullScreenVideo(true)}
                                                 style={{ cursor: 'pointer' }}
                                                 onError={(e) => {
-                                                    e.target.style.display = 'none'; 
+                                                    e.target.style.display = 'none';
                                                     e.target.parentElement.innerHTML += `<div class="${styles.imagePlaceholder}"><span>Video goes here.<br/>Upload to: <b>public${activeProject.video}</b></span></div>`;
                                                 }}
                                             />
                                             <button className={styles.expandBtn} onClick={() => setFullScreenVideo(true)} aria-label="Expand video">
                                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                                                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
                                                 </svg>
                                             </button>
                                         </>
@@ -175,8 +197,8 @@ const Projects = () => {
                     </button>
                     <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
                         {isDriveLink(activeProject.video) ? (
-                            <iframe 
-                                src={getDrivePreviewLink(activeProject.video)} 
+                            <iframe
+                                src={getDrivePreviewLink(activeProject.video)}
                                 title={`${activeProject.title} Demo Fullscreen`}
                                 className={styles.fullScreenVideo}
                                 style={{ width: '100%', height: '100%', border: 'none' }}
@@ -184,13 +206,13 @@ const Projects = () => {
                                 allowFullScreen
                             />
                         ) : (
-                            <video 
-                                src={activeProject.video} 
-                                className={styles.fullScreenVideo} 
-                                autoPlay 
-                                loop 
+                            <video
+                                src={activeProject.video}
+                                className={styles.fullScreenVideo}
+                                autoPlay
+                                loop
                                 controls
-                                playsInline 
+                                playsInline
                             />
                         )}
                     </div>

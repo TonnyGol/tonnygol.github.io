@@ -139,6 +139,34 @@
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), var(--shadow-glow-purple);
 }
 
+/* Card Video Preview */
+.cardVideoPreview {
+    position: relative;
+    z-index: 2;
+    width: calc(100% + 56px);
+    margin: -28px -28px 20px -28px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.cardPreviewVideo,
+.cardPreviewIframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+    display: block;
+    pointer-events: none;
+    transition: transform 0.6s ease;
+}
+
+.card:hover .cardPreviewVideo,
+.card:hover .cardPreviewIframe {
+    transform: scale(1.05);
+}
+
 .cardContent {
     flex: 1;
     position: relative;
