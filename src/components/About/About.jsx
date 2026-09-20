@@ -3,10 +3,10 @@ import { personalInfo } from '../../data/projects';
 
 const About = () => {
     const highlights = [
-        { icon: '🎓', title: 'CS Student', description: 'Third-year Computer Science student at Ashkelon Academic College' },
+        { icon: '🎓', title: 'CS Student', description: 'B.Sc. in Computer Science at Ashkelon Academic College (GPA 89)' },
         { icon: '💻', title: 'Backend Focus', description: 'Building robust, scalable server-side applications with Java & Spring Boot' },
         { icon: '🔧', title: 'Full Stack', description: 'React + Vite frontend with REST API backend integration' },
-        { icon: '🤖', title: 'ML & Vision', description: 'Experience with TensorFlow and OpenCV for computer vision projects' }
+        { icon: '🤖', title: 'ML & Security', description: 'TensorFlow/OpenCV plate recognition and a Random Forest–based network intrusion detector' }
     ];
 
     return (
@@ -26,7 +26,7 @@ const About = () => {
                     <p className={styles.text}>
                         My journey in tech started with the "{personalInfo.education[1].program}" and has evolved through
                         my time as a {personalInfo.military[0].role} in the {personalInfo.military[0].unit} and my {personalInfo.education[0].degree.toLowerCase()} studies.
-                        I've built booking platforms, bots, desktop games, and explored machine learning.
+                        I've built booking platforms, distributed vision systems, an intrusion detection system, and hardware-integrated games.
                     </p>
 
                     <div className={styles.highlights}>

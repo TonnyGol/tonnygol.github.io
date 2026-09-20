@@ -77,8 +77,6 @@ const Skills = () => {
                             { name: 'Python', color: '#3776ab' },
                             { name: 'Spring', color: '#6db33f' },
                             { name: 'Git', color: '#f05032' },
-                            { name: 'Linux', color: '#fcc624' },
-                            { name: 'Go', color: '#00add8' },
                             // Duplicate for seamless loop
                             { name: 'Java', color: '#f89820' },
                             { name: 'React', color: '#61dafb' },
@@ -86,8 +84,6 @@ const Skills = () => {
                             { name: 'Python', color: '#3776ab' },
                             { name: 'Spring', color: '#6db33f' },
                             { name: 'Git', color: '#f05032' },
-                            { name: 'Linux', color: '#fcc624' },
-                            { name: 'Go', color: '#00add8' }
                         ].map((tech, index) => (
                             <span
                                 key={`${tech.name}-${index}`}
