@@ -25,7 +25,7 @@ const About = () => {
                     </p>
                     <p className={styles.text}>
                         My journey in tech started with the "{personalInfo.education[1].program}" and has evolved through
-                        my time as a {personalInfo.military[0].role} in the {personalInfo.military[0].unit} and my {personalInfo.education[0].degree.toLowerCase()} studies.
+                        my {personalInfo.education[0].degree.toLowerCase()} studies.
                         I've built booking platforms, distributed vision systems, an intrusion detection system, and hardware-integrated games.
                     </p>
 

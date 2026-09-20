@@ -101,7 +101,7 @@ export const personalInfo = {
   title: "Software Developer",
   phone: "+972-527808321",
   location: "Israel",
-  summary: "Computer Science student (GPA 89) with hands-on experience building distributed systems, REST APIs, machine-learning pipelines, and hardware-integrated applications in Java, Python, JavaScript, and C#. Former Staff Sergeant and squad commander in the IDF Field Intelligence Corps, eager to contribute to engineering teams in backend development, system design, and scalable applications.",
+  summary: "Computer Science student (GPA 89) with hands-on experience building distributed systems, REST APIs, machine-learning pipelines, and hardware-integrated applications in Java, Python, JavaScript, and C#. Eager to contribute to engineering teams in backend development, system design, and scalable applications.",
   education: [
     {
       institution: "Ashkelon Academic College",
