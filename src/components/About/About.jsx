@@ -3,7 +3,7 @@ import { personalInfo } from '../../data/projects';
 
 const About = () => {
     const highlights = [
-        { icon: '🎓', title: 'CS Student', description: 'B.Sc. in Computer Science at Ashkelon Academic College (GPA 89)' },
+        { icon: '🎓', title: 'CS Graduate', description: 'B.Sc. in Computer Science graduate from Ashkelon Academic College' },
         { icon: '💻', title: 'Backend Focus', description: 'Building robust, scalable server-side applications with Java & Spring Boot' },
         { icon: '🔧', title: 'Full Stack', description: 'React + Vite frontend with REST API backend integration' },
         { icon: '🤖', title: 'ML & Security', description: 'TensorFlow/OpenCV plate recognition and a Random Forest–based network intrusion detector' }
@@ -24,8 +24,8 @@ const About = () => {
                         Hey! I'm {personalInfo.name.split(' ')[0]}, a {personalInfo.title} and {personalInfo.summary.charAt(0).toLowerCase() + personalInfo.summary.slice(1)}
                     </p>
                     <p className={styles.text}>
-                        My journey in tech started with the "{personalInfo.education[1].program}" and has evolved through
-                        my {personalInfo.education[0].degree.toLowerCase()} studies.
+                        My journey in tech started with the "{personalInfo.education[1].program}" and has led to
+                        my {personalInfo.education[0].degree}.
                         I've built booking platforms, distributed vision systems, an intrusion detection system, and hardware-integrated games.
                     </p>
 

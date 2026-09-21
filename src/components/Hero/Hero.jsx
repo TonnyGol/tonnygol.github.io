@@ -7,7 +7,7 @@ const Hero = () => {
     const [displayText, setDisplayText] = useState('');
     const [isTyping, setIsTyping] = useState(true);
 
-    const roles = [personalInfo.title, 'Backend Engineer', 'CS Student', 'Problem Solver'];
+    const roles = [personalInfo.title, 'Backend Engineer', 'CS Graduate', 'Problem Solver'];
     const [roleIndex, setRoleIndex] = useState(0);
     const [charIndex, setCharIndex] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
