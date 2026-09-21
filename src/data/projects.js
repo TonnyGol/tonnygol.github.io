@@ -13,18 +13,6 @@ export const projects = [
     featured: true
   },
   {
-    id: 2,
-    title: "IntrusionSense IDS",
-    emoji: "🛡️",
-    description: "Built a real-time packet capture engine (Python / Scapy) monitoring live TCP/IP traffic through a two-stage pipeline: a Decision Tree binary triage (normal / suspicious) feeding into a Random Forest 6-class attack type classifier (Pandas), achieving 93–100% precision across 6 attack categories with sub-500ms alert latency on live network flows.",
-    video: null,
-    technologies: ["Python", "Scapy", "Pandas", "Random Forest", "TCP/IP"],
-    category: "Cyber Security",
-    githubUrl: null,
-    liveUrl: null,
-    featured: true
-  },
-  {
     id: 3,
     title: "Escape Room Booking and Management System",
     emoji: "🗝️",
@@ -37,11 +25,23 @@ export const projects = [
     featured: true
   },
   {
+    id: 2,
+    title: "IntrusionSense IDS",
+    emoji: "🛡️",
+    description: "Built a real-time packet capture engine (Python / Scapy) monitoring live TCP/IP traffic through a two-stage pipeline: a Decision Tree binary triage (normal / suspicious) feeding into a Random Forest 6-class attack type classifier (Pandas), achieving 93–100% precision across 6 attack categories with sub-500ms alert latency on live network flows.",
+    video: null,
+    technologies: ["Python", "Scapy", "Pandas", "Random Forest", "TCP/IP"],
+    category: "Cyber Security",
+    githubUrl: null,
+    liveUrl: null,
+    featured: true
+  },
+  {
     id: 4,
     title: "Battleship Hybrid Interactive Game",
     emoji: "🚢",
     description: "Architected a hardware-software bridge connecting a 50-cell sensor-equipped physical Battleship board to a C#/WPF digital engine via MQTT, synchronizing real-time game state across physical and digital layers. Implemented a 5-state machine covering ship placement validation and 2-team multiplayer logic, with custom sprite animation caching for smooth UI rendering across all game states.",
-    video: "/projects/battleship.mp4",
+    video: null,
     technologies: ["C#", ".NET", "WPF", "MQTT", "Hardware-Software Integration", "State-Machine Logic", "UI Development"],
     category: "Desktop",
     githubUrl: null,
